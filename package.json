@@ -1,0 +1,26 @@
+{
+  "name": "moviecli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shaesgithub/MovieCLI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shaesgithub/MovieCLI/issues"
+  },
+  "homepage": "https://github.com/Shaesgithub/MovieCLI#readme",
+  
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "mongoose": "^6.4.6",
+    "yargs": "^17.5.1"
+  }
+}
