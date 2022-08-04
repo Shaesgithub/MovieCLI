@@ -1,8 +1,8 @@
 const Movie = require("./model")
 
+// CREATE
+// node src/app.js --create --title "required content" --actor "" --director "" --review ""
 exports.createMovie = async (movieObject) => {
-
-    // CRUD
 
     try {
 
@@ -15,6 +15,8 @@ exports.createMovie = async (movieObject) => {
     }
 };
 
+// READ ALL
+// node src/app.js --read
 exports.readMovie = async () => {
 
     try {
@@ -29,11 +31,14 @@ exports.readMovie = async () => {
     }
 }
 
-exports.updateMovie = async (query, replacement) => {
+// UPDATE ACTOR
+// node src/app.js --update --title "selected movie" --actor "new actor name"
+exports.updateMovie = async (yargObj) => {
 
     try {
 
-        await Movie.replaceOne(query, replacement)
+        const editMovie = await Movie.updateOne({title: yargObj.title}, {$set: {actor: yargObj.actor}});
+        console.log(editMovie);
     }
 
     catch (error) {
@@ -42,15 +47,15 @@ exports.updateMovie = async (query, replacement) => {
     }
 }
 
-exports.deleteMovie = async (query) => {
 
+// DELETE
+// node src/app --delete --title "content"
+exports.deleteMovie = async (yargObj) => {
+    
     try {
-
-        await Movie.deleteOne(query)
-    }
-
-    catch (error) {
-
+        const delMovie = await Movie.deleteOne({ title: yargObj.title });
+        console.log(delMovie);
+    } catch (error) {
         console.log(error);
     }
-}
+};
