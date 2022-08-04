@@ -21,11 +21,10 @@ exports.readMovie = async () => {
 
     try {
 
-        const results = await Movie.find()
-        console.log(results);
-    }
-
-    catch (error) {
+        const listMovie = await Movie.find()
+        console.log(listMovie);
+        
+    } catch (error) {
 
         console.log(error);
     }
@@ -39,9 +38,8 @@ exports.updateMovie = async (yargObj) => {
 
         const editMovie = await Movie.updateOne({title: yargObj.title}, {$set: {actor: yargObj.actor}});
         console.log(editMovie);
-    }
 
-    catch (error) {
+    } catch (error) {
 
         console.log(error);
     }
@@ -55,7 +53,9 @@ exports.deleteMovie = async (yargObj) => {
     try {
         const delMovie = await Movie.deleteOne({ title: yargObj.title });
         console.log(delMovie);
+
     } catch (error) {
+
         console.log(error);
     }
 };

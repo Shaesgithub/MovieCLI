@@ -1,1 +1,1 @@
-# MovieCLI using Yarg MongoDB and Mongoose
+# MovieCLI using Yargs, MongoDB and Mongoose
